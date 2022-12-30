@@ -3,10 +3,13 @@ package main
 import "testing"
 
 func TestHello(t *testing.T) {
-	got := Hello()
-	want := "Hello, world"
+	t.Run("Primera suma que hacemos", func(t *testing.T) {
+		got := Suma(5, 10)
+		want := 15
 
-	if got != want {
-		t.Errorf("got %q want %q", got, want)
-	}
+		if got != want {
+			t.Errorf("Obtenemos %q queremos obtener %q", got, want)
+		}
+
+	})
 }
